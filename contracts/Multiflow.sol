@@ -2,27 +2,60 @@
 pragma solidity ^0.7.3;
 
 import "../interfaces/IMultiflow.sol";
-import "../interfaces/IVerifier.sol";
 
 contract Multiflow is IMultiflow {
 
-    IVerifier verifier;
-
-    constructor(address _verifier) {
-
-        verifier = IVerifier(verifier);
+    struct Voter {
+        uint depositedFunds,
     }
 
-    function _payout() returns(bool success) {
+    map(address => Voter) voters;
+    address[] workers;
+
+    constructor() {
+    }
+
+    function deposit() external payable returns(bool success) {
+
+        voters[msg.sender].depositedFunds += msg.value;
+
+        emit Deposited(
+            msg.sender,
+            msg.value,
+        );
 
         return true;
     }
 
-    function _verifyVotes() returns(bool) {
+    function vote() external returns(bool success) {
+
+        uint funds = voters[msg.sender].depositedFunds;
+
+        fundPerWorker = funds / workers.length;
+
+        for(int i = 0; i < workers.length; i++){
+            _payout(workers[i], fundPerWorker);
+        }
 
         return true;
     }
 
-    event VotePassed(
+    function _payout(address _to, uint _amount) internal returns(bool success) {
+
+        payable address to = payable(_to);
+
+        to.send(_amount);
+
+        return true;
+    }
+
+    event Deposited(
+        address Depositer,
+        uint Amount,
+    );
+
+    event Voted(
+        address voter,
+        uint payout,
     );
 }
