@@ -2,11 +2,13 @@
 pragma solidity ^0.7.3;
 
 import "../interfaces/IMultiflow.sol";
+import "@opengsn/contracts/src/BaseRelayRecipient.sol";
+
 
 /**
  * @title Central contract for the Multiflow project funds management
  */
-contract Multiflow is IMultiflow {
+contract Multiflow is IMultiflow, BaseRelayRecipient {
     /// @notice maps address of a voter to a project Id, which maps to a donation amount for that project
     mapping(address => mapping(uint256 => uint256)) public voters;
 

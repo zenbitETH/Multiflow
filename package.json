@@ -19,6 +19,7 @@
   "homepage": "https://github.com/zachanon/Multiflow#readme",
   "devDependencies": {
     "@nomiclabs/hardhat-solhint": "^2.0.0",
+    "@opengsn/contracts": "^2.2.2",
     "@types/chai": "^4.2.19",
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.12.4",

@@ -7,3 +7,4 @@ module.exports = {
 
 
 import "@nomiclabs/hardhat-solhint";
+import "@opengsn/contracts";
