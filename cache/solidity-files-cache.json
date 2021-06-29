@@ -1,0 +1,75 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/zach/projects/web3/ethg/Multiflow/contracts/Multiflow.sol": {
+      "lastModificationDate": 1624988398429,
+      "contentHash": "6742f0a82b5032788dfc368ad2f62607",
+      "sourceName": "contracts/Multiflow.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IMultiflow.sol"
+      ],
+      "versionPragmas": [
+        "^0.7.3"
+      ],
+      "artifacts": [
+        "Multiflow"
+      ]
+    },
+    "/home/zach/projects/web3/ethg/Multiflow/interfaces/IMultiflow.sol": {
+      "lastModificationDate": 1624988022846,
+      "contentHash": "d7973b3201feda732f6b78c6681f983c",
+      "sourceName": "interfaces/IMultiflow.sol",
+      "solcConfig": {
+        "version": "0.7.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.7.3"
+      ],
+      "artifacts": [
+        "IMultiflow"
+      ]
+    }
+  }
+}
