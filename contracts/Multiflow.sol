@@ -30,10 +30,10 @@ contract Multiflow is IMultiflow, BaseRelayRecipient {
         returns (bool)
     {
         // record amount deposited by this voter
-        voters[msg.sender][_proposal] += msg.value;
+        voters[_msg.sender()][_proposal] += msg.value;
 
         // emit record
-        emit Funded(msg.sender, msg.value, _proposal);
+        emit Funded(_msg.sender(), msg.value, _proposal);
 
         return true;
     }
@@ -50,7 +50,7 @@ contract Multiflow is IMultiflow, BaseRelayRecipient {
         returns (bool)
     {
         // calculate total donation to this proposal
-        uint256 funds = voters[msg.sender][_proposal];
+        uint256 funds = voters[_msg.sender()][_proposal];
 
         // split funds among workers and payout
         address[] memory workerAdresses = workers[_proposal];
@@ -62,7 +62,7 @@ contract Multiflow is IMultiflow, BaseRelayRecipient {
         }
 
         // emit record
-        emit Approved(msg.sender, _proposal, funds);
+        emit Approved(_msg.sender(), _proposal, funds);
 
         return true;
     }
