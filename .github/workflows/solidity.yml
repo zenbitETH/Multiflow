@@ -55,4 +55,8 @@ jobs:
             ${{ runner.os }}-
       - run: yarn install --frozen-lockfile
       - name: Run tests
+<<<<<<< HEAD
         run: ./tools/ci/solidity_test_hardhat
+=======
+        run: ./tools/ci/solidity_test_hardhat
+>>>>>>> 0a2711019b3eda0aaee9b18b543634231b0c609f
