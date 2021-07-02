@@ -4,7 +4,6 @@ pragma solidity ^0.7.3;
 import "../interfaces/IMultiflow.sol";
 import "@opengsn/contracts/src/BaseRelayRecipient.sol";
 
-
 /**
  * @title Central contract for the Multiflow project funds management
  */
@@ -14,8 +13,6 @@ contract Multiflow is IMultiflow, BaseRelayRecipient {
 
     /// @notice maps a project Id to a set of responsible workers
     mapping(uint256 => address[]) public workers;
-
-    constructor() {}
 
     /**
      * @notice allows a voter to supply funds to a project
@@ -30,10 +27,10 @@ contract Multiflow is IMultiflow, BaseRelayRecipient {
         returns (bool)
     {
         // record amount deposited by this voter
-        voters[_msg.sender()][_proposal] += msg.value;
+        voters[_msgSender()][_proposal] += msg.value;
 
         // emit record
-        emit Funded(_msg.sender(), msg.value, _proposal);
+        emit Funded(_msgSender(), msg.value, _proposal);
 
         return true;
     }
@@ -50,7 +47,7 @@ contract Multiflow is IMultiflow, BaseRelayRecipient {
         returns (bool)
     {
         // calculate total donation to this proposal
-        uint256 funds = voters[_msg.sender()][_proposal];
+        uint256 funds = voters[_msgSender()][_proposal];
 
         // split funds among workers and payout
         address[] memory workerAdresses = workers[_proposal];
@@ -62,7 +59,7 @@ contract Multiflow is IMultiflow, BaseRelayRecipient {
         }
 
         // emit record
-        emit Approved(_msg.sender(), _proposal, funds);
+        emit Approved(_msgSender(), _proposal, funds);
 
         return true;
     }
@@ -82,5 +79,10 @@ contract Multiflow is IMultiflow, BaseRelayRecipient {
 
         success = payTo.send(_amount);
         return success;
+    }
+
+    /// @notice required to inherit from BaseRelayRecipient
+    function versionRecipient() external view override returns (string memory) {
+        return "2.0.3";
     }
 }
