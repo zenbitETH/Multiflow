@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
-import "./index.css";
+import "./styles/index.css";
 import App from "./App";
 
 // You should replace this url with your own and put it into a .env file
