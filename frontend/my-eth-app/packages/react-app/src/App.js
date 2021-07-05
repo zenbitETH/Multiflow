@@ -9,7 +9,6 @@ import useWeb3Modal from "./hooks/useWeb3Modal";
 //import { addresses, abis } from "@project/contracts";
 import GET_TRANSFERS from "./graphql/subgraph";
 import Project from './components/Project';
-import Verification from './components/Verification';
 
 //async function readOnChainData() {
 //  // Should replace with the end-user wallet, e.g. Metamask

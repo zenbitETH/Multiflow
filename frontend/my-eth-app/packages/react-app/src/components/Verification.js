@@ -5,7 +5,9 @@ const Verification = () => {
 return (
     <div className="project">
       <div className="project-id">
-      💡 Project # 1 <div className="project-title">Do the government errands to build a pool on the vacant lot next to the park.</div>
+        <span role="img" aria-label="emoji">💡</span> 
+        Project # 1 
+        <div className="project-title">Do the government errands to build a pool on the vacant lot next to the park.</div>
       </div>
       <div className="project-info">
         made on 27/6/2021
@@ -13,8 +15,8 @@ return (
       </div>
       <div className="table-container">
         <div className="project-table">
-          <div className="proposal-cell3">⚙️ Action: <div className="table-text">{}Public work</div></div>
-          <div className="proposal-cell3"> 📍 Where: <div className="table-text">{}Santa Mónica 2</div></div>
+          <div className="proposal-cell3"> <span role="img" aria-label="emoji">⚙️</span> Action: <div className="table-text">{}Public work</div></div>
+          <div className="proposal-cell3"> <span role="img" aria-label="emoji">📍</span> Where: <div className="table-text">{}Santa Mónica 2</div></div>
         </div>
         <div className="project-description">
         It is proposed to build a pool on the vacant lot next to the park for water sports. To comply with this proposal, it is necessary to carry out the management with the State Government to verify its viability. The reward to whoever carries out this management is put to a future vote.

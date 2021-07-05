@@ -5,7 +5,7 @@ const Project = () => {
 
 return (
     <div className="container">
-    <div className="voter-side"> 💧 Fund a project 💧
+    <div className="voter-side"><span role="img" aria-label="emoji">💧</span> Fund a project <span role="img" aria-label="emoji">💧</span>
       <div class="eth">
         <input type="number" id="number" placeholder="0.0000"></input>
       </div>
@@ -19,7 +19,7 @@ return (
     <div className="work-button">
           Take this work
     </div>
-    <div className="worker-side"> ⚙️ Complete the job ⚙️</div>
+    <div className="worker-side"> <span role="img" aria-label="emoji">⚙️</span> Complete the job ⚙️</div>
   </div>
 )
 }
