@@ -9,6 +9,7 @@ import useWeb3Modal from "./hooks/useWeb3Modal";
 //import { addresses, abis } from "@project/contracts";
 import GET_TRANSFERS from "./graphql/subgraph";
 import Project from './components/Project';
+import Verification from './components/Verification';
 
 //async function readOnChainData() {
 //  // Should replace with the end-user wallet, e.g. Metamask
@@ -57,9 +58,9 @@ function App() {
           <WalletButton provider={provider} loadWeb3Modal={loadWeb3Modal} logoutOfWeb3Modal={logoutOfWeb3Modal} />
         </div>
       </div>
-      <Project>
-      </Project>
-    
+      <div className= "body">
+        <Project/> 
+      </div>
     </div>
   );
 }
