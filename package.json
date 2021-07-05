@@ -5,9 +5,5 @@
     "hardhat": "^2.4.1",
     "prettier": "^2.3.2",
     "prettier-plugin-solidity": "*"
-  },
-  "dependencies": {
-    "create-eth-app": "^1.6.5",
-    "yarn": "^1.22.10"
   }
 }
